@@ -1,0 +1,139 @@
+@keyframes spin {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  
+.cornered-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.33vw solid transparent;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    margin: 1vw;
+    background: linear-gradient(to bottom right, #007bff, #00ff7f);
+    background-size: 400% 400%; /* Quadruple the background size */
+    animation: spin 6s linear infinite; /* Adjust animation duration and time function */
+}
+
+.contact-container {
+    display: flex;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.contact-container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    border-radius: 45px; /* Make sure to match this value with the border-radius of .contact-container */
+    background: linear-gradient(to right, #000000, #444444);
+    background-size: 400% 400%; 
+    animation: spin 30s linear infinite; /* Adjust animation duration and time function */
+}
+
+.contact-container form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow */
+    width: 400px;
+}
+
+.contact-container h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Arial', Arial, sans-serif;
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #027e40;
+}
+
+.success-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow */
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #000;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+
+@keyframes flyIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+
+.contact-container.submitted .success-popup {
+    animation: flyIn 1s forwards ease-out;
+    z-index: 1; /* Ensure the popup is displayed above other elements */
+    pointer-events: auto; /* Allow interaction with the popup */
+}

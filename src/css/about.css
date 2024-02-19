@@ -1,0 +1,203 @@
+@keyframes spin {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  
+.cornered-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.33vw solid transparent;
+    border-radius: 1vw;
+    padding: 0.5vw; /* Adjust padding as needed */
+    margin: 1vw; /* Adjust margin as needed */
+    background: linear-gradient(to bottom right, #4c2dff, #1cff7a);
+    background-size: 400% 400%; /* Quadruple the background size */
+    animation: spin 6s linear infinite; /* Adjust animation duration and timing function */
+}
+
+.cornered-box h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 2vw; /* Adjust font size as needed */
+    color: white; /* Set text color */
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container,
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.image-container {
+    order: 1;
+}
+.text-container {
+    order: 2;
+}
+
+.text-content-holder {
+    border: 0.33vw solid transparent;
+    border-radius: 2vw;
+    background: linear-gradient(to bottom right, #4c2dff, #1cff7a);
+    background-size: 400% 400%;
+    animation: spin 6s linear infinite;
+    width: 700px; /* Adjust width as needed */
+    height: 270px; /* Adjust height as needed */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the content vertically */
+}
+
+.text-content {
+    padding: 10px; /* Adjust padding as needed */
+    border: 0.33vw solid transparent;
+    border-radius: 2vw;
+    background-color:  #13151f;
+    color: white;
+    text-align: center;
+    width: calc(100% - 10px); /* Subtract twice the padding from the width */
+    height: calc(100% - 10px); /* Subtract twice the padding from the height */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+
+.text-content p {
+    color: white;
+    text-align: center;
+    font-size: medium;
+    margin: 0;
+}
+
+.image-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.33vw solid transparent;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, #4c2dff, #1cff7a);
+    background-size: 400% 400%;
+    animation: spin 6s linear infinite;
+}
+
+.image-frame img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.skill-frame {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2vw;
+    align-items: center;
+    justify-content: center;
+    width: 75vw;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.skill-badge {
+    position: relative; /* Ensure positioning context */
+    display: flex;
+    flex: 1 1 150;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 40px;
+    background: linear-gradient(to bottom right, #ffffff, #000000);
+    background-size: 400% 400%;
+    animation: spin 6s linear infinite;
+    margin-bottom: 20px;
+    margin: 0 auto;
+}
+
+.skill-badge img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    
+}
+
+.skill-text-container {
+    display: flex;
+    padding-bottom: 2vw;
+    justify-content: center;
+    width: 75vw;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.skill-text {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 120px;
+    border-radius: 40px;
+    background-color: #a0a0a0e0;
+    text-align: center;
+    align-items: center;
+    font-size: 25px; /* Adjust font size as needed */
+    color: #ffffff; /* Text color */
+    
+}
+
+
+
+@media screen and (max-width: 750px) {
+
+    .skill-frame {
+        flex-direction: column;
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack content vertically on small screens */
+    }
+
+    .image-container,
+    .text-container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .image-container {
+        order: 1; /* Place image after text on smaller screens */
+    }
+
+    .text-container {
+        order: 2; /* Place text before image on smaller screens */
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    .text-content p {
+        font-size: 3.2vw;
+    }
+
+    .text-content-holder {
+        height: 330px;
+    }
+}
+

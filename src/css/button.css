@@ -1,0 +1,129 @@
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+    margin: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+    background-color: #e4e4e4;
+    color: #5c5c5c;
+    border: 3px solid transparent; /* Add transparent border */
+}
+
+/* Button Link Styles */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+/* Selected Button Animation */
+.btn-selected {
+    outline: 4px solid transparent;
+    border-color: #cc0909; /* Change border color on hover */
+    animation: borderColorChange 6s linear infinite;
+}
+
+@keyframes borderColorChange {
+    0% {
+        border-color: #cc0909; /* Start color */
+    }
+    50% {
+        border-color: #00a2ff; /* Middle color */
+    }
+    100% {
+        border-color: #cc0909; /* End color */
+    }
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    border-color: #ccc;
+}
+/* Button Hover Animation */
+.btn-animate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    outline: 3px solid transparent;
+    border-color: #cc0909; /* Change border color on hover */
+    animation: borderColorChange 6s linear infinite;
+}
+
+@keyframes borderColorChange {
+    0% {
+        border-color: #cc0909; /* Start color */
+    }
+    50% {
+        border-color: #00a2ff; /* Middle color */
+    }
+    100% {
+        border-color: #cc0909; /* End color */
+    }
+}
+
+
+/* Button Active Animation */
+.btn-animate:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(9, 77, 117, 0.9)
+}
+
+/* Button Gray Variant */
+.btn-gray {
+    background-color: #e4e4e4;
+    color: #5c5c5c;
+}
+
+/* Button Hover Effect */
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* Button Animated Effect */
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
